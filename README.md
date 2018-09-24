@@ -1,0 +1,1 @@
+# FINT.Model.Resource.Utdanning
