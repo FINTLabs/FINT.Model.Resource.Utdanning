@@ -10,13 +10,13 @@ pipeline {
     stage('Build') {
       steps {
         timeout(10) {
-            waitUntil {
-                script {
-                  sh 'git clean -fdx'
-                  def r = sh returnStatus: true, script: 'dotnet msbuild -t:restore -p:RestoreSources="https://api.nuget.org/v3/index.json;https://api.bintray.com/nuget/fint/nuget" FINT.Model.Resource.Utdanning.sln'
-                    return r == 0
-                }
+          waitUntil {
+            script {
+              sh 'git clean -fdx'
+              def r = sh returnStatus: true, script: 'dotnet msbuild -t:restore FINT.Model.Resource.Utdanning.sln'
+              return r == 0
             }
+          }
         }
         sh 'dotnet test FINT.Model.Resource.Utdanning.Tests'
         sh 'dotnet msbuild -t:build,pack -p:Configuration=Release FINT.Model.Resource.Utdanning.sln'
