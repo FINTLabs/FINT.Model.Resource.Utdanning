@@ -1,4 +1,4 @@
-// Built from tag v3.4.0
+// Built from tag v3.5.0-rc-1
 
 using System;
 using System.Collections.Generic;
@@ -33,9 +33,19 @@ namespace FINT.Model.Utdanning.Timeplan
      
             
 
+        public void AddElevforhold(Link link)
+        {
+            AddLink("elevforhold", link);
+        }
+
         public void AddFag(Link link)
         {
             AddLink("fag", link);
+        }
+
+        public void AddTermin(Link link)
+        {
+            AddLink("termin", link);
         }
 
         public void AddSkole(Link link)
@@ -43,9 +53,9 @@ namespace FINT.Model.Utdanning.Timeplan
             AddLink("skole", link);
         }
 
-        public void AddElevforhold(Link link)
+        public void AddSkolear(Link link)
         {
-            AddLink("elevforhold", link);
+            AddLink("skolear", link);
         }
 
         public void AddUndervisningsforhold(Link link)
@@ -56,6 +66,11 @@ namespace FINT.Model.Utdanning.Timeplan
         public void AddTime(Link link)
         {
             AddLink("time", link);
+        }
+
+        public void AddGruppemedlemskap(Link link)
+        {
+            AddLink("gruppemedlemskap", link);
         }
 
         public void AddGrepreferanse(Link link)

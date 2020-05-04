@@ -5,18 +5,16 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using FINT.Model.Resource;
 
-using FINT.Model.Felles.Kompleksedatatyper;
+using FINT.Model.Utdanning.Basisklasser;
 
 namespace FINT.Model.Utdanning.Elev
 {
 
-    public class MedlemskapResource 
+    public class KontaktlarergruppemedlemskapResource : Gruppemedlemskap 
     {
 
     
-        public Identifikator SystemId { get; set; }
-        
-        public MedlemskapResource()
+        public KontaktlarergruppemedlemskapResource()
         {
             Links = new Dictionary<string, List<Link>>();
         }
@@ -35,29 +33,14 @@ namespace FINT.Model.Utdanning.Elev
      
             
 
-        public void AddMedlem(Link link)
+        public void AddElevforhold(Link link)
         {
-            AddLink("medlem", link);
+            AddLink("elevforhold", link);
         }
 
-        public void AddFortlopendeVurdering(Link link)
+        public void AddKontaktlarergruppe(Link link)
         {
-            AddLink("fortlopendeVurdering", link);
-        }
-
-        public void AddGruppe(Link link)
-        {
-            AddLink("gruppe", link);
-        }
-
-        public void AddEndeligVurdering(Link link)
-        {
-            AddLink("endeligVurdering", link);
-        }
-
-        public void AddFravar(Link link)
-        {
-            AddLink("fravar", link);
+            AddLink("kontaktlarergruppe", link);
         }
     }
 }

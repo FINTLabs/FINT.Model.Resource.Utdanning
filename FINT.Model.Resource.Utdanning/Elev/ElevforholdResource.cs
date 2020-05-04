@@ -1,10 +1,11 @@
-// Built from tag v3.4.0
+// Built from tag v3.5.0-rc-1
 
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using FINT.Model.Resource;
 
+using FINT.Model.Felles.Kompleksedatatyper;
 using FINT.Model.Utdanning.Basisklasser;
 
 namespace FINT.Model.Utdanning.Elev
@@ -14,6 +15,9 @@ namespace FINT.Model.Utdanning.Elev
     {
 
     
+        public Periode Gyldighetsperiode { get; set; }
+        public bool? Hovedskole { get; set; }
+        
         public ElevforholdResource()
         {
             Links = new Dictionary<string, List<Link>>();
@@ -33,11 +37,6 @@ namespace FINT.Model.Utdanning.Elev
      
             
 
-        public void AddBasisgruppe(Link link)
-        {
-            AddLink("basisgruppe", link);
-        }
-
         public void AddElev(Link link)
         {
             AddLink("elev", link);
@@ -53,24 +52,19 @@ namespace FINT.Model.Utdanning.Elev
             AddLink("skole", link);
         }
 
-        public void AddEksamensgruppe(Link link)
+        public void AddBasisgruppe(Link link)
         {
-            AddLink("eksamensgruppe", link);
+            AddLink("basisgruppe", link);
         }
 
-        public void AddKontaktlarergruppe(Link link)
+        public void AddBasisgruppemedlemskap(Link link)
         {
-            AddLink("kontaktlarergruppe", link);
+            AddLink("basisgruppemedlemskap", link);
         }
 
-        public void AddProgramomrade(Link link)
+        public void AddUndervisningsgruppemedlemskap(Link link)
         {
-            AddLink("programomrade", link);
-        }
-
-        public void AddUndervisningsgruppe(Link link)
-        {
-            AddLink("undervisningsgruppe", link);
+            AddLink("undervisningsgruppemedlemskap", link);
         }
 
         public void AddVurdering(Link link)
@@ -78,9 +72,44 @@ namespace FINT.Model.Utdanning.Elev
             AddLink("vurdering", link);
         }
 
+        public void AddKontaktlarergruppe(Link link)
+        {
+            AddLink("kontaktlarergruppe", link);
+        }
+
+        public void AddEksamensgruppemedlemskap(Link link)
+        {
+            AddLink("eksamensgruppemedlemskap", link);
+        }
+
+        public void AddKontaktlarergruppemedlemskap(Link link)
+        {
+            AddLink("kontaktlarergruppemedlemskap", link);
+        }
+
+        public void AddProgramomrade(Link link)
+        {
+            AddLink("programomrade", link);
+        }
+
         public void AddFravar(Link link)
         {
             AddLink("fravar", link);
+        }
+
+        public void AddProgramomrademedlemskap(Link link)
+        {
+            AddLink("programomrademedlemskap", link);
+        }
+
+        public void AddEksamensgruppe(Link link)
+        {
+            AddLink("eksamensgruppe", link);
+        }
+
+        public void AddUndervisningsgruppe(Link link)
+        {
+            AddLink("undervisningsgruppe", link);
         }
 
         public void AddMedlemskap(Link link)

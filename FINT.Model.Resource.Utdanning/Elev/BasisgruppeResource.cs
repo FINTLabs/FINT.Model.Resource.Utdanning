@@ -1,4 +1,4 @@
-// Built from tag v3.4.0
+// Built from tag v3.5.0-rc-1
 
 using System;
 using System.Collections.Generic;
@@ -33,6 +33,21 @@ namespace FINT.Model.Utdanning.Elev
      
             
 
+        public void AddSkolear(Link link)
+        {
+            AddLink("skolear", link);
+        }
+
+        public void AddElevforhold(Link link)
+        {
+            AddLink("elevforhold", link);
+        }
+
+        public void AddTermin(Link link)
+        {
+            AddLink("termin", link);
+        }
+
         public void AddTrinn(Link link)
         {
             AddLink("trinn", link);
@@ -48,9 +63,9 @@ namespace FINT.Model.Utdanning.Elev
             AddLink("undervisningsforhold", link);
         }
 
-        public void AddElevforhold(Link link)
+        public void AddGruppemedlemskap(Link link)
         {
-            AddLink("elevforhold", link);
+            AddLink("gruppemedlemskap", link);
         }
 
         public void AddKontaktlarergruppe(Link link)

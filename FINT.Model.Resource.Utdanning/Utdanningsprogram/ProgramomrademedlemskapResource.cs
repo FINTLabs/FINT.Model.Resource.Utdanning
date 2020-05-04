@@ -10,11 +10,11 @@ using FINT.Model.Utdanning.Basisklasser;
 namespace FINT.Model.Utdanning.Utdanningsprogram
 {
 
-    public class UtdanningsprogramResource : Gruppe 
+    public class ProgramomrademedlemskapResource : Gruppemedlemskap 
     {
 
     
-        public UtdanningsprogramResource()
+        public ProgramomrademedlemskapResource()
         {
             Links = new Dictionary<string, List<Link>>();
         }
@@ -33,29 +33,14 @@ namespace FINT.Model.Utdanning.Utdanningsprogram
      
             
 
-        public void AddSkole(Link link)
+        public void AddElevforhold(Link link)
         {
-            AddLink("skole", link);
+            AddLink("elevforhold", link);
         }
 
         public void AddProgramomrade(Link link)
         {
             AddLink("programomrade", link);
-        }
-
-        public void AddGrepreferanse(Link link)
-        {
-            AddLink("grepreferanse", link);
-        }
-
-        public void AddVigoreferanse(Link link)
-        {
-            AddLink("vigoreferanse", link);
-        }
-
-        public void AddMedlemskap(Link link)
-        {
-            AddLink("medlemskap", link);
         }
     }
 }
